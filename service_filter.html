@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <div ng-app="myApp">
+            <p>{{255 | myFormat}}</p>
+        </div>
+        
+        <script>
+            var app = angular.module('myApp', []);
+            app.service('hexafy', function(){
+                this.myFunc = function(val){
+                    return val.toString(16);
+                }
+            });
+            app.filter('myFormat', ['hexafy', function (hexafy){
+                return function(val){
+                    return hexafy.myFunc(val);
+                };
+            }]);
+        </script>
+    </body>
+</html>

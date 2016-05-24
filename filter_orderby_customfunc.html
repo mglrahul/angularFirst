@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div ng-app="myApp" ng-controller='myCtrl'>
+            <table class="table data">
+                <tr>
+                    <th ng-click="orderByMe('name')">Name</th>
+                    <th ng-click="orderByMe('country')">Country</th>
+                </tr>
+                <tr ng-repeat="x in names|orderBy:myOrderBy">
+                    <td>{{x.name}}</td>
+                    <td>{{x.country}}</td>
+                </tr>
+            </table>
+        </div></div></div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope){
+                $scope.names = [
+                    {name:'testName1',country:'Norway'},
+                    {name:'testName2',country:'Swedan'},
+                    {name:'testName3',country:'India'},
+                    {name:'testName4',country:'USA'},
+                    {name:'testName5',country:'England'},
+                    {name:'testName6',country:'Spain'},
+                    {name:'testName7',country:'Brazil'},
+                    {name:'testName8',country:'France'},
+                    {name:'testName9',country:'Denmark'},
+                    {name:'testName10',country:'Australia'},
+                ];
+                $scope.orderByMe = function(x){
+                    $scope.myOrderBy =x;
+                }
+            })
+        </script>
+    </body>
+</html>

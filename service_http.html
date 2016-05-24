@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <div ng-app="myApp" ng-controller='myCtrl'>
+            <p>{{msg}}</p>
+        </div>
+        
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http){
+                $http.get('http_service.html').then(function (response){
+                    $scope.msg = response.data;
+                });
+            });
+        </script>
+    </body>
+</html>

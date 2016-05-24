@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <div ng-app="myApp" ng-controller='myCtrl'>
+            <ul>
+                <li ng-repeat="x in myData">
+                    {{x.Name +','+x.City}}
+                </li>
+            </ul>
+        </div>
+        
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http){
+                $http.get('http_request_customer_file.html').then(function (response){
+                    $scope.myData = response.data.records;
+                },function myError(response){
+                    //$scope.msg = response.statusText;
+                    $scope.msg = 'Something is went wrong there';
+                });
+            });
+        </script>
+    </body>
+</html>
