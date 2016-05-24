@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+
+        <div ng-app="myApp" ng-controller="personCtrl">
+            <p>First Name: <input type="text" ng-model="first_name"></p>
+            <p>Last Name: <input type="text" ng-model="last_name"></p>
+            <p>{{fullName()}}</p>
+        </div>
+        <script src="personController.js"></script>
+    </body>
+</html>

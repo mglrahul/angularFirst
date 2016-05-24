@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <form  ng-app="" name="myForm" ng-init="emailValue='test@gmail.com'">
+            <p>Email:  <input type="email" name="emailVal" ng-model="emailValue" required></p>
+            <p><span>{{myForm.emailVal.$valid}}(if true, the value meets all criteria).</span></p>
+            <p><span>{{myForm.emailVal.$dirty}}(if true, the value has been changed).</span></p>
+            <p><span>{{myForm.emailVal.$touched}}(if true, the field has been in focus).</span></p>
+        </form >
+    </body>
+</html>

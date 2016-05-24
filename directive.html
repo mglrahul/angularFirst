@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+        <div ng-app="myApp">
+            <w3-new-directive></w3-new-directive>
+       </div>
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.directive('w3NewDirective', function(){
+                return{
+                    template: "<h1>Made by a directive</h1>hello"
+                }
+            });
+        </script>
+    </body>
+</html>
